@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Attack Hitbox")]
+    [SerializeField] private GameObject rightHand;
     private BoxCollider hitbox;
     [SerializeField] private LayerMask enemyLayers;
     private AudioClip swordSwingFX;
@@ -18,8 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-
-        hitbox = GetComponent<BoxCollider>();
+        hitbox = rightHand.GetComponentInChildren<BoxCollider>();
         swordSwingFX = Player.instance.swordSwingSFX;
         animator = GetComponent<Animator>();
     }
@@ -44,14 +44,12 @@ public class PlayerAttack : MonoBehaviour
 
     //sets animator to attack and plays attack sound
 
-    /*
     public void playerAttack()
     {
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("RightHand@Attack01"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
         {
             animator.SetTrigger("isAttacking");
-            Debug.Log("Attack");
-            SoundFXManager.instance.playSoundEffect(swordSwingFX, transform, 1f);
+            //SoundFXManager.instance.playSoundEffect(swordSwingFX, transform, 1f);
         }
     }
 
@@ -60,18 +58,18 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Time.time - Player.instance.LastPlayerAttack >= Player.instance.AttackCooldown)
         {
-            Player.instance.EntitySpeed = 0f;
+            //Player.instance.EntitySpeed = 0f;
             Player.instance.LastPlayerAttack = Time.time;
             hitbox.enabled = true;
         }
     }
-
+    
     public void deactivateAttackHitBox()
     {
         hitbox.enabled = false;
-        Player.instance.EntitySpeed = 7;
+        //Player.instance.EntitySpeed = 7;
     }
-
+    /*
     //checks if enemy hits collider and deals damage
     //Should be noted collider and script is found attached to the weapon the player prephab
     private void OnTriggerEnter(Collider other)
@@ -83,11 +81,10 @@ public class PlayerAttack : MonoBehaviour
             enemy.entityTakeDamage(Player.instance.EntityDamage);
         }
     }
-
+    */
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.yellow;
     //    Gizmos.DrawCube(hitbox.position, hitBoxSize);
     //}
-    */
 }

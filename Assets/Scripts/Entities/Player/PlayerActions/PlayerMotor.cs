@@ -43,10 +43,10 @@ public class PlayerMotor : MonoBehaviour
     //receive inputs from InputManager and apply them   to character controller
     public void ProcessMove(Vector2 input)
     {
-        Debug.Log(input);
+        //Debug.Log(input);
         if((input.x != 0) || (input.y != 0)) {
             idleTimer = 0f;
-            //animator.SetBool("idleTimer", false);
+            animator.SetBool("idleTimer", false);
             moveDirection = Vector3.zero;
             moveDirection.x = input.x;
             moveDirection.z = input.y;
@@ -62,9 +62,8 @@ public class PlayerMotor : MonoBehaviour
 
             moveDirection = transform.InverseTransformDirection(moveDirection);
 
-            /*
-            animator.SetFloat("VelX",moveDirection.x*4);
-            animator.SetFloat("VelZ", moveDirection.z*4);
+            animator.SetFloat("velX",moveDirection.x*4);
+            animator.SetFloat("velZ", moveDirection.z*4);
             animator.SetBool("isRunning", true);
         }
         else if((input.x == 0) && (input.y == 0) && (idleTimer >= 15)){
@@ -74,11 +73,11 @@ public class PlayerMotor : MonoBehaviour
         else
         {
             idleTimer += Time.deltaTime;
-            animator.SetFloat("VelX", 0);
-            animator.SetFloat("VelZ", 0);
+            animator.SetFloat("velX", 0);
+            animator.SetFloat("velZ", 0);
             animator.SetBool("isRunning", false);
             //Debug.Log(idleTimer);
-            */
+            
         }
     }
 
