@@ -26,11 +26,9 @@ public class Player : Entity
     public AudioClip potionSFX;
     public AudioClip itemCollectSFX;
 
-    //private PlayerAttack playerAttack;
+    private PlayerAttack playerAttack;
     private Collider hitbox;
     private Animator animator;
-    private int difficulty;
-
 
     private void Awake()
     {
@@ -41,24 +39,9 @@ public class Player : Entity
     }
     private void Start()
     {
-        //playerAttack = GameObject.Find("Player").transform.Find("Character_Male_Rouge_01").transform.Find("Root").transform.Find("Hips").transform.Find("Spine_01").transform.Find("Spine_02").transform.Find("Spine_03").transform.Find("Clavicle_R").transform.Find("Shoulder_R").transform.Find("Elbow_R").transform.Find("Hand_R").transform.Find("SM_Prop_SwordOrnate_01").transform.Find("weaponHitBox").gameObject.GetComponent<PlayerAttack>();
+        playerAttack = GetComponent<PlayerAttack>();
         hitbox = GetComponent<Collider>();
         animator = GetComponent<Animator>();
-    }
-
-    public override void entityTakeDamage(float damage)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void entityDie()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void entityAttack()
-    {
-        throw new System.NotImplementedException();
     }
 
     public float LastPlayerAttack
@@ -84,12 +67,26 @@ public class Player : Entity
         set { animator = value; }
     }
 
-    /*
     protected override void entityAttack()
     {
         playerAttack.playerAttack();
     }
 
+    //logic for entity taking damage
+    public override void entityTakeDamage(float damage)
+    {
+
+    }
+
+    //logic for entity dying
+    protected override void entityDie()
+    {
+
+    }
+
+    //logic for entity attacking
+
+    /*
     protected override void entityDie()
     {
         Destroy(gameObject);
