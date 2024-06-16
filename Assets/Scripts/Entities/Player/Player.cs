@@ -66,6 +66,11 @@ public class Player : Entity
         get { return animator; }
         set { animator = value; }
     }
+    public PlayerAttack PlayerAttack
+    {
+        get { return playerAttack; }
+        set { playerAttack = value; }
+    }
 
     protected override void entityAttack()
     {
