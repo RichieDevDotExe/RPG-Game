@@ -22,7 +22,6 @@ public class TankChaseState : EnemyBaseState
     private void ChaseLogic()
     {
         Enemy.Agent.destination = Enemy.Player.transform.position;
-        Enemy.Agent.speed = Enemy.EntitySpeed;
         //needs to check if player is too far away to see so it can go back to idle
         if (Enemy.CanSeePlayer() != true)
         {

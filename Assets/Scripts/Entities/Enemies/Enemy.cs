@@ -63,5 +63,5 @@ public abstract class Enemy : Entity
         Init();
     }
 
-
+    public abstract void enemyAttack();
 }

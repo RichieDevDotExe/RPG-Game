@@ -20,6 +20,6 @@ public class TankAttackState : EnemyBaseState
 
     protected void AttackingLogic()
     {
-        //Enemy.entityAttack();
+        Enemy.enemyAttack();
     }
 }

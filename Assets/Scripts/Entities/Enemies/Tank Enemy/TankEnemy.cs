@@ -37,4 +37,8 @@ public class TankEnemy : Enemy
         throw new System.NotImplementedException();
     }
 
+    public override void enemyAttack()
+    {
+        throw new System.NotImplementedException();
+    }
 }
