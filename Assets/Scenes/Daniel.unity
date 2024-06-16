@@ -227,6 +227,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &97745503 stripped
@@ -537,18 +538,30 @@ Transform:
   m_PrefabInstance: {fileID: 345902825}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2098268644672693135
+=======
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1667441503706343547
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
+<<<<<<< Updated upstream
     m_TransformParent: {fileID: 444633364}
     m_Modifications:
     - target: {fileID: 3964533615976894163, guid: 6bca1f602b6e0364293149f7efe2d943,
+=======
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 3964533615976894163, guid: 6bca1f602b6e0364293149f7efe2d943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,11 +616,68 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sword
+=======
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.13019393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5619593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.619558
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399608604405537684, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259732611219530687, guid: cbd9ddb29895c324daf0042b13a4a699,
+        type: 3}
+      propertyPath: m_Name
+      value: Player Container
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: 6bca1f602b6e0364293149f7efe2d943, type: 3}
 --- !u!1001 &2605326614977484360
 PrefabInstance:
@@ -800,3 +870,6 @@ PrefabInstance:
       addedObject: {fileID: 1607901052}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368cb5918991ee246b55a26623b24010, type: 3}
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: cbd9ddb29895c324daf0042b13a4a699, type: 3}
+>>>>>>> Stashed changes
