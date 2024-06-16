@@ -52,8 +52,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void playerAttack()
     {
-        animator.SetBool("isBow", true);
-        //equippedWeaponScript.attack();
+        //animator.SetBool("isBow", true);
+        equippedWeaponScript.attack();
         /*
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
         {
