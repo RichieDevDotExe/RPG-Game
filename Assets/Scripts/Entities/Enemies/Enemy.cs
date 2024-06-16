@@ -9,6 +9,7 @@ public abstract class Enemy : Entity
 {
     [Header("Enemy Stats")]
     [SerializeField] protected EnemyStateMachine stateMachine;
+    [SerializeField] protected static EnemyValues enemyValues;
     [SerializeField] protected Action<GameObject> destroyThis;
     [SerializeField] protected Animator animator;
     [SerializeField] protected NavMeshAgent agent;

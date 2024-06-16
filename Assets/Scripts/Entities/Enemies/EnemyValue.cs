@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class EnemyValues : ScriptableObject
 {
-    [SerializeField] public float MaxHealth;
-    [SerializeField] public float Damage;
-    [SerializeField] public float Speed;
-    [SerializeField] public float AttackRange;
+    [SerializeField] public float maxHealth;
+    [SerializeField] public float damage;
+    [SerializeField] public float speed;
+    [SerializeField] public float attackRange;
     [SerializeField] public float detectionRange;
     [SerializeField] public float fieldOfView;
     [SerializeField] public float enemyCooldown;
