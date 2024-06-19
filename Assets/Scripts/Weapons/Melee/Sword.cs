@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Sword : Weapon
 {
-    private Animator animator;
     private BoxCollider hitbox;
+    private Animator animator;
     void Start()
     {
-        animator = Player.instance.GetComponent<Animator>();
+        Debug.Log("ayoooooooo");
         hitbox = GetComponentInChildren<BoxCollider>();
+        animator = Player.instance.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class Sword : Weapon
 
     public override void attack()
     {
+        Debug.Log(animator);
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
         {
             animator.SetTrigger("isAttacking");
@@ -51,5 +53,15 @@ public class Sword : Weapon
     {
         hitbox.enabled = false;
         //Player.instance.EntitySpeed = 7;
+    }
+
+    public override void onEquip()
+    {
+        Debug.Log("equipped sword!");
+    }
+
+    public override void onUnEquip()
+    {
+        Debug.Log("unequipped sword!");
     }
 }

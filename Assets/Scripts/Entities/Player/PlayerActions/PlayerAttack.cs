@@ -14,6 +14,10 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
     private GameObject equippedWeapon;
     private Weapon equippedWeaponScript;
+    private GameObject[] weaponSlots;
+
+    //TEMPORARY THING
+    [SerializeField] private GameObject equippedBow;
 
     void Start()
     {
@@ -21,37 +25,39 @@ public class PlayerAttack : MonoBehaviour
         swordSwingFX = Player.instance.swordSwingSFX;
         animator = GetComponent<Animator>();
 
+   
+        weaponSlots = new GameObject[] {startingWeapon, equippedBow};
+        Debug.Log(weaponSlots[1]);
+
         equipWeapon(startingWeapon);
     }
 
-    public void equipWeapon(GameObject weapon)
+    public void equipWeapon(GameObject newWeapon)
     {
-        equippedWeapon = weapon;
+        //only runs if a weapon is already equipped
+        if (equippedWeapon)
+        {
+            equippedWeaponScript.onUnEquip();
+        }
+        Debug.Log("weapon");
+        Debug.Log(newWeapon);
+        equippedWeapon = newWeapon;
         equippedWeaponScript = equippedWeapon.GetComponent<Weapon>();
+
+        equippedWeaponScript.onEquip();
     }
 
-    //public void playerAttack()
-    //{
-    //    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
-    //    {
-    //        Player.instance.EntitySpeed = 0;
-    //        Debug.Log("attack");
-    //        Collider[] hitEnemies = Physics.OverlapBox(hitbox.position + (Vector3.up * hitBoxOffsetY) + (Vector3.forward * hitBoxOffsetX), hitBoxSize, hitbox.rotation, enemyLayers);
-    //        animator.SetTrigger("isAttacking");
-    //        foreach (Collider targetEnemy in hitEnemies)
-    //        {
-    //            Debug.Log("Hit");
-    //            enemy = targetEnemy.gameObject.GetComponent<Enemy>();
-    //            Debug.Log(enemy.name);
-    //            enemy.entityTakeDamage(Player.instance.EntityDamage);
-    //        }
-    //    }
-    //}
+    public void switchWeaponSlot(int slot)
+    {
+        Debug.Log("helo");
+        Debug.Log(weaponSlots[1]);
+        equipWeapon(weaponSlots[slot]);
+    }
 
     //sets animator to attack and plays attack sound
-
     public void playerAttack()
     {
+        //animator.SetBool("isBow", true);
         equippedWeaponScript.attack();
         /*
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
