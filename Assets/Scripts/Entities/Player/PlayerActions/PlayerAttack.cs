@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     private Weapon equippedWeaponScript;
     private GameObject[] weaponSlots;
 
+    public MeshSockets sockets;
+
     //TEMPORARY THING
     [SerializeField] private GameObject equippedBow;
 
@@ -30,18 +32,23 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log(weaponSlots[1]);
 
         equipWeapon(startingWeapon);
+
+        //weapon sockets
+        sockets = GetComponent<MeshSockets>();
     }
 
-    public void equipWeapon(GameObject newWeapon)
+    public void equipWeapon(GameObject weapon)
     {
         //only runs if a weapon is already equipped
         if (equippedWeapon)
         {
             equippedWeaponScript.onUnEquip();
         }
-        Debug.Log("weapon");
-        Debug.Log(newWeapon);
-        equippedWeapon = newWeapon;
+
+        //equip weapon to weapon socket
+        sockets.Attach(weapon.transform, MeshSockets.SocketID.Spine);
+
+        equippedWeapon = weapon;
         equippedWeaponScript = equippedWeapon.GetComponent<Weapon>();
 
         equippedWeaponScript.onEquip();
