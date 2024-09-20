@@ -7,21 +7,16 @@ public abstract class Weapon : MonoBehaviour
     [Header("Weapon Stats")]
     [SerializeField] protected float attackCooldown;
 
-    private Animator playerAnimator;
-    void Awake()
+    public Animator animator;
+    protected void initWeapon()
     {
-        playerAnimator = Player.instance.GetComponent<Animator>();
+        animator = Player.instance.PlayerAnimator;
     }
 
     public float AttackCooldown
     {
         get { return attackCooldown; }
         set { attackCooldown = value; }
-    }
-    public Animator PlayerAnimator
-    {
-        get { return playerAnimator; }
-        set { playerAnimator = value; }
     }
     public abstract void onEquip();
     public abstract void onUnEquip();

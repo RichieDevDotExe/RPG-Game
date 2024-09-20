@@ -36,12 +36,13 @@ public class Player : Entity
         {
             instance = this;
         }
-    }
-    private void Start()
-    {
         playerAttack = GetComponent<PlayerAttack>();
         hitbox = GetComponent<Collider>();
         animator = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        
     }
 
     public float LastPlayerAttack

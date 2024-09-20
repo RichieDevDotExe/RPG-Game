@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Bow : Weapon
 {
-    private Animator animator;
     private BoxCollider hitbox;
     void Start()
     {
-        animator = Player.instance.GetComponent<Animator>();
+        initWeapon();
         //hitbox = GetComponentInChildren<BoxCollider>();
     }
 
@@ -34,10 +33,12 @@ public class Bow : Weapon
 
     public override void onEquip()
     {
+        Debug.Log("equipped bow!");
         animator.SetBool("isBow", true);
     }
     public override void onUnEquip()
     {
+        Debug.Log("unequipped bow!");
         animator.SetBool("isBow", false);
     }
 }
