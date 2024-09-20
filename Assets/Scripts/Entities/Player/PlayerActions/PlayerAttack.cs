@@ -39,6 +39,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void equipWeapon(GameObject weapon)
     {
+        Debug.Log("asasasasweapon");
+        Debug.Log(weapon);
         //only runs if a weapon is already equipped
         if (equippedWeapon)
         {
@@ -47,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
 
         //equip weapon to weapon socket
         sockets.Attach(weapon.transform, MeshSockets.SocketID.Spine);
-
+        Debug.Log("uhuhhuh");
         equippedWeapon = weapon;
         equippedWeaponScript = equippedWeapon.GetComponent<Weapon>();
 
