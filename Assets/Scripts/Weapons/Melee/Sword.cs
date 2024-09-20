@@ -5,12 +5,10 @@ using UnityEngine;
 public class Sword : Weapon
 {
     private BoxCollider hitbox;
-    private Animator animator;
     void Start()
     {
-        Debug.Log("ayoooooooo");
+        initWeapon();
         hitbox = GetComponentInChildren<BoxCollider>();
-        animator = Player.instance.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,7 +19,7 @@ public class Sword : Weapon
 
     public override void attack()
     {
-        Debug.Log(animator);
+        Debug.Log("Sword Attack");
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
         {
             animator.SetTrigger("isAttacking");

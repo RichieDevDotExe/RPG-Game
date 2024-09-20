@@ -56,8 +56,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void switchWeaponSlot(int slot)
     {
-        Debug.Log("helo");
-        Debug.Log(weaponSlots[1]);
         equipWeapon(weaponSlots[slot]);
     }
 
