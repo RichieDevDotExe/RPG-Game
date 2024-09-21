@@ -11,12 +11,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject startingWeapon;
     private AudioClip swordSwingFX;
     //private Enemy enemy;
-    private Animator animator;
     private GameObject equippedWeapon;
     private Weapon equippedWeaponScript;
     private GameObject[] weaponSlots;
-
-    public MeshSockets sockets;
 
     //TEMPORARY THING
     [SerializeField] private GameObject equippedBow;
@@ -25,31 +22,20 @@ public class PlayerAttack : MonoBehaviour
     {
         hitbox = rightHand.GetComponentInChildren<BoxCollider>();
         swordSwingFX = Player.instance.swordSwingSFX;
-        animator = GetComponent<Animator>();
 
    
         weaponSlots = new GameObject[] {startingWeapon, equippedBow};
-        Debug.Log(weaponSlots[1]);
 
-        equipWeapon(startingWeapon);
-
-        //weapon sockets
-        sockets = GetComponent<MeshSockets>();
     }
 
     public void equipWeapon(GameObject weapon)
     {
-        Debug.Log("asasasasweapon");
-        Debug.Log(weapon);
         //only runs if a weapon is already equipped
         if (equippedWeapon)
         {
             equippedWeaponScript.onUnEquip();
         }
 
-        //equip weapon to weapon socket
-        sockets.Attach(weapon.transform, MeshSockets.SocketID.Spine);
-        Debug.Log("uhuhhuh");
         equippedWeapon = weapon;
         equippedWeaponScript = equippedWeapon.GetComponent<Weapon>();
 
@@ -58,14 +44,33 @@ public class PlayerAttack : MonoBehaviour
 
     public void switchWeaponSlot(int slot)
     {
-        equipWeapon(weaponSlots[slot]);
+        //will equip the weapon in the specified slot if there is one
+        if(weaponSlots.Length > slot)
+        {
+            equipWeapon(weaponSlots[slot]);
+        }
+        //temporary for debugging
+        else
+        {
+            Debug.Log("No weapon in slot" + slot);
+        }
+        
     }
 
     //sets animator to attack and plays attack sound
     public void playerAttack()
     {
+        if (equippedWeapon)
+        {
+            equippedWeaponScript.attack();
+        }
+        //just for debugging
+        else
+        {
+            Debug.Log("No Weapon Equipped!");
+        }
         //animator.SetBool("isBow", true);
-        equippedWeaponScript.attack();
+        
         /*
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
         {
@@ -84,6 +89,13 @@ public class PlayerAttack : MonoBehaviour
     {
         equippedWeaponScript.endAttackAnimation();
     }
+
+    //when this is called it will put the equipped weapon into it's hand socket
+    public void socketEquippedWeapon()
+    {
+        equippedWeaponScript.equipSocket();
+    }
+
     /*
 
     //checks if enemy hits collider and deals damage

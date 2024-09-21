@@ -56,10 +56,14 @@ public class Sword : Weapon
     public override void onEquip()
     {
         Debug.Log("equipped sword!");
+        animator.SetBool("isSword", true);
+        //equipSocket();
     }
 
     public override void onUnEquip()
     {
         Debug.Log("unequipped sword!");
+        animator.SetBool("isSword", false);
+        unEquipSocket();
     }
 }

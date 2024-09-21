@@ -7,7 +7,6 @@ public class MeshSocket : MonoBehaviour
     public MeshSockets.SocketID socketID;
     Transform attachPoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         attachPoint = transform.GetChild(0);

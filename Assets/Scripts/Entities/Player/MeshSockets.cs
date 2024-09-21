@@ -6,13 +6,16 @@ public class MeshSockets : MonoBehaviour
 {
     public enum SocketID
     {
-        Spine
+        Spine,
+        LeftHand,
+        RightHand,
+        SideSocketSword,
+        BackSocketBow
     }
 
     Dictionary<SocketID, MeshSocket> socketMap = new Dictionary<SocketID, MeshSocket>();
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         MeshSocket[] sockets = GetComponentsInChildren<MeshSocket>();
         foreach (MeshSocket socket in sockets)

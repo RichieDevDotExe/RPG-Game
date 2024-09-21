@@ -40,5 +40,6 @@ public class Bow : Weapon
     {
         Debug.Log("unequipped bow!");
         animator.SetBool("isBow", false);
+        unEquipSocket();
     }
 }
