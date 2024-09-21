@@ -848,6 +848,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0
+  animator: {fileID: 0}
+  handSocket: 0
+  backSocket: 0
 --- !u!1 &2983304921671626456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1597,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   startingWeapon: {fileID: 2890910754032329895}
+  sockets: {fileID: 0}
   equippedBow: {fileID: 7404708537798755392}
 --- !u!114 &2085836779399830041
 MonoBehaviour:
@@ -2985,6 +2989,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0
+  animator: {fileID: 0}
+  handSocket: 0
+  backSocket: 0
 --- !u!1 &7457892645151684245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,6 +3188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0
+  animator: {fileID: 0}
+  handSocket: 0
+  backSocket: 0
 --- !u!1 &7814772919192679205
 GameObject:
   m_ObjectHideFlags: 0

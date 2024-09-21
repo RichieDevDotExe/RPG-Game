@@ -29,6 +29,7 @@ public class Player : Entity
     private PlayerAttack playerAttack;
     private Collider hitbox;
     private Animator animator;
+    private MeshSockets sockets;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class Player : Entity
         playerAttack = GetComponent<PlayerAttack>();
         hitbox = GetComponent<Collider>();
         animator = GetComponent<Animator>();
+        sockets = GetComponent<MeshSockets>();
     }
     private void Start()
     {
@@ -71,6 +73,10 @@ public class Player : Entity
     {
         get { return playerAttack; }
         set { playerAttack = value; }
+    }
+    public MeshSockets Sockets { 
+        get { return sockets; } 
+        set { sockets = value; }
     }
 
     protected override void entityAttack()
