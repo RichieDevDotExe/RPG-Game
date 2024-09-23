@@ -58,11 +58,11 @@ public class PlayerAttack : MonoBehaviour
     }
 
     //sets animator to attack and plays attack sound
-    public void playerAttack()
+    public void startAttack()
     {
         if (equippedWeapon)
         {
-            equippedWeaponScript.attack();
+            equippedWeaponScript.startAttack();
         }
         //just for debugging
         else
@@ -79,6 +79,14 @@ public class PlayerAttack : MonoBehaviour
         }
         */
     }
+    public void releaseAttack()
+    {
+        if (equippedWeapon)
+        {
+            equippedWeaponScript.releaseAttack();
+        }
+    }
+
     //called in animator
     public void startAttackAnimation()
     {

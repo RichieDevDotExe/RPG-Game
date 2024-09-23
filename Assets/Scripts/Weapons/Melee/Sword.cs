@@ -17,7 +17,7 @@ public class Sword : Weapon
         
     }
 
-    public override void attack()
+    public override void startAttack()
     {
         Debug.Log("Sword Attack");
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack"))
@@ -65,5 +65,10 @@ public class Sword : Weapon
         Debug.Log("unequipped sword!");
         animator.SetBool("isSword", false);
         unEquipSocket();
+    }
+
+    //not used in the sword class
+    public override void releaseAttack()
+    {     
     }
 }

@@ -216,7 +216,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: 80.09, z: 0}
 --- !u!114 &7164320
 MonoBehaviour:
@@ -341,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 57658526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.08081028, y: 0, z: -8.318666}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalScale: {x: 30, y: 2.0925, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -953,6 +953,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e36fd38f51446e54db6a2cf376fe775c, type: 3}
+--- !u!1001 &1251896071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5511318
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.237908
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640004735679132908, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853188660902620917, guid: 6ffe36065e904cb4581ac4b06706675d,
+        type: 3}
+      propertyPath: m_Name
+      value: Arrow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ffe36065e904cb4581ac4b06706675d, type: 3}
 --- !u!1 &1339925811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1225,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48948dfe9d76b07488dacd46a7955fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1379824521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379824522}
+  m_Layer: 0
+  m_Name: height
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379824522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379824521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.111, y: 1.8, z: -8.863}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1433969721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2802220429926303056, guid: 634b0a91dd500b144b909d247ccde093,
@@ -1541,11 +1645,7 @@ PrefabInstance:
     - target: {fileID: 6106970664518705399, guid: 634b0a91dd500b144b909d247ccde093,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Spine_03'\n\tTransform 'Hand_L'\n\tTransform
-        'Hand_R'\n\tTransform 'Spine_03'\n\tTransform 'Hand_L'\n\tTransform 'Hand_R'\n\tTransform
-        'Spine_03'\n\tTransform 'Hand_L'\n\tTransform 'Hand_R'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7035548692421964128, guid: 634b0a91dd500b144b909d247ccde093,
         type: 3}
@@ -1622,6 +1722,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackSlotSword
       objectReference: {fileID: 0}
+    - target: {fileID: 8179663629586195470, guid: 634b0a91dd500b144b909d247ccde093,
+        type: 3}
+      propertyPath: playerHeightTransform
+      value: 
+      objectReference: {fileID: 1379824521}
     - target: {fileID: 8343915663510516303, guid: 634b0a91dd500b144b909d247ccde093,
         type: 3}
       propertyPath: equippedBow

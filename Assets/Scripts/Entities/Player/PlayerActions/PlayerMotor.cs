@@ -140,8 +140,11 @@ public class PlayerMotor : MonoBehaviour
             lookPos = hit.point;
         }
         lookDir = lookPos - transform.position;
-        lookDir.y = 0;
+        lookDir.y += Player.instance.PlayerHeight;
 
+        Player.instance.LookDirection = lookDir;
+
+        lookDir.y = 0;
         transform.LookAt(transform.position + lookDir, Vector3.up);
     }
 
