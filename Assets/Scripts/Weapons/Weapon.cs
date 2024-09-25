@@ -6,9 +6,15 @@ public abstract class Weapon : MonoBehaviour
 {
     [Header("Weapon Stats")]
     [SerializeField] protected float attackCooldown;
-    void Awake()
+
+    public Animator animator;
+    public MeshSockets.SocketID handSocket;
+    public MeshSockets.SocketID backSocket;
+    public MeshSockets sockets;
+    protected void initWeapon()
     {
-        
+        animator = Player.instance.PlayerAnimator;
+        sockets = Player.instance.Sockets;
     }
 
     public float AttackCooldown
@@ -16,7 +22,17 @@ public abstract class Weapon : MonoBehaviour
         get { return attackCooldown; }
         set { attackCooldown = value; }
     }
-
+    public abstract void onEquip();
+    public abstract void onUnEquip();
+    public void equipSocket()
+    {
+        //equip weapon to weapon socket
+        sockets.Attach(transform, handSocket);
+    }
+    public void unEquipSocket()
+    {
+        sockets.Attach(transform, backSocket);
+    }
     public abstract void attack();
     public abstract void startAttackAnimation();
     public abstract void endAttackAnimation();
