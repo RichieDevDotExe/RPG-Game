@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankIdleState : EnemyBaseState
+/*
+ 
+Author: Richard
+Desc: Describes how the Tank enemy should act when entering, exiting and during its Idle state. Enemy is in idle state when player isn't detected
+ 
+ */
+public class TankIdleState : TankBaseState
 {
     private int waypointIndex;
 
@@ -13,14 +19,16 @@ public class TankIdleState : EnemyBaseState
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void Perform()
     {
-        throw new System.NotImplementedException();
+        IdleState();
+
+        //Debug.Log("performing Idle");
     }
 
+    //possibly move this to tank enemy
     public void IdleState()
     {
         if (Enemy.Agent.remainingDistance < 0.2f)
@@ -34,6 +42,11 @@ public class TankIdleState : EnemyBaseState
                 waypointIndex = 0;
             }
             Enemy.Agent.SetDestination(Enemy.Waypoints[waypointIndex].position);
+        }
+        //switches to chase state if player can be seen
+        if (Enemy.CanSeePlayer() == true)
+        {
+            StateMachine.changeState(new TankChaseState());
         }
     }
 }

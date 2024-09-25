@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
+/*
+ 
+Author: Richard
+Desc: Contains stats and functions all entities must have
+ 
+ */
+
 public abstract class Entity : MonoBehaviour
 {
     [Header("Entitiy Stats")]

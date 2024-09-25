@@ -2,7 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankAttackState : EnemyBaseState
+/*
+ 
+Author: Richard
+Desc: Describes how the Tank enemy should act when entering, exiting and during its melee state. Enemy is in melee state when player is in close range
+ 
+ */
+
+public class TankMeleeState : TankBaseState
 {
     public override void Enter()
     {
@@ -12,14 +19,16 @@ public class TankAttackState : EnemyBaseState
 
     public override void Exit()
     {
+
     }
 
     public override void Perform()
     {
+
     }
 
     protected void AttackingLogic()
     {
-        Enemy.enemyAttack();
+        Tank.enemyAttack(Tank.startPunch);
     }
 }

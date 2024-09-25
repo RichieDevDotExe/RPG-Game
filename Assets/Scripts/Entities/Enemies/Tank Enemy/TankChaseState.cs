@@ -2,7 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankChaseState : EnemyBaseState
+/*
+ 
+Author: Richard
+Desc: Describes how the Tank enemy should act when entering, exiting and during its chase state. Enemy is in chase state when chasing the player
+ 
+ */
+
+public class TankChaseState : TankBaseState
 {
     public override void Enter()
     {
@@ -21,16 +28,15 @@ public class TankChaseState : EnemyBaseState
     //if in chase state sets nav agent destination to enemy.
     private void ChaseLogic()
     {
-        Enemy.Agent.destination = Enemy.Player.transform.position;
+        Tank.Agent.destination = Tank.Player.transform.position;
         //needs to check if player is too far away to see so it can go back to idle
-        if (Enemy.CanSeePlayer() != true)
+        if (Tank.CanSeePlayer() != true)
         {
             StateMachine.changeState(new TankIdleState());
         }
-        //or close enough to attack 
-        if (Vector3.Distance(Enemy.transform.position, Enemy.Player.transform.position) <= Enemy.AttackRange)
+        else
         {
-            StateMachine.changeState(new TankAttackState());
+            Tank.attackChecker();
         }
     }
 
