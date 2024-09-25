@@ -114,6 +114,7 @@ public class TankEnemy : Enemy
         //Debug.Log(stateMachine.InitalState.GetType());
         stateMachine.Init();
         agent = GetComponent<NavMeshAgent>();
+        player = Player.instance;
     }
 
     //creates waypoint list for enemy to follow
@@ -167,14 +168,7 @@ public class TankEnemy : Enemy
     {
         animator.SetTrigger("isIdle");
         animator.SetBool("isPunching", false);
-        if (CanSeePlayer() != true)
-        {
-            stateMachine.changeState(new TankIdleState());
-        }
-        else if (CanSeePlayer() == true)
-        {
-            stateMachine.changeState(new TankChaseState());
-        }
+        stateMachine.changeState(new TankIdleState());
     }
 
     //Functions used during the charge state of enemy. performCharge(), endCharge() and finishCharge() run using animation events
@@ -218,14 +212,7 @@ public class TankEnemy : Enemy
         Debug.Log("Done lunge");
         chargeHitbox.enabled = false;
         rb.velocity = Vector3.zero;
-        if (CanSeePlayer() != true)
-        {
-            stateMachine.changeState(new TankIdleState());
-        }
-        else if (CanSeePlayer() == true)
-        {
-            stateMachine.changeState(new TankChaseState());
-        }
+        stateMachine.changeState(new TankIdleState());
     }
 
     public void finishedCharge()
@@ -234,8 +221,8 @@ public class TankEnemy : Enemy
         speed = saveSpeed;
         animator.SetTrigger("isIdle");
         animator.speed = 1;
-        stateMachine.changeState(new TankChaseState());
-        
+        stateMachine.changeState(new TankIdleState());
+
     }
 
     //checks if throwable is in range whilst chasing player
@@ -268,7 +255,7 @@ public class TankEnemy : Enemy
         Debug.Log("Parent " + throwable.transform.parent.name);
         Debug.Log(saveSpeed);
         speed = saveSpeed;
-        stateMachine.changeState(new TankChaseState());
+        stateMachine.changeState(new TankIdleState());
 
     }
 
