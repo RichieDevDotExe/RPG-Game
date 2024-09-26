@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ 
+Author: Richard
+Desc: Base state for all enemy states to be based on 
+ 
+ */
+
 public abstract class EnemyBaseState
 {
     private Enemy enemy;

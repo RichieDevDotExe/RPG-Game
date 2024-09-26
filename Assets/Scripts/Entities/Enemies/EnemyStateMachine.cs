@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ 
+Author: Richard
+Desc: Handles the state switching of the enemy
+ 
+ */
+
 public class EnemyStateMachine : MonoBehaviour
 {
-    [SerializeField] private EnemyBaseState initalState;
+    private EnemyBaseState initalState;
     private EnemyBaseState activeState;
 
     public EnemyBaseState ActiveState
@@ -13,10 +20,18 @@ public class EnemyStateMachine : MonoBehaviour
         set { activeState = value; }
     }
 
+    public EnemyBaseState InitalState
+    {
+        get { return initalState; }
+        set { initalState = value; }
+    }
+
 
     //initalise statemachine
     public void Init()
     {
+        //Debug.Log("Initialise Statemachine");
+        //Debug.Log(initalState.GetType());
         changeState(initalState);
     }
     void Start()
