@@ -23,6 +23,7 @@ public abstract class Enemy : Entity
     protected NavMeshAgent agent;
     protected Collider hitbox;
     protected Player player;
+    protected Rigidbody rb;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float detectionRange;
     [SerializeField] protected float fieldOfView;
