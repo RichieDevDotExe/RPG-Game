@@ -77,20 +77,24 @@ public class Bow : Weapon
 
         //calculate direction from attackPoint to targetPoint
         //Vector3 arrowDirection = targetPoint - attackPoint.position;
-        Vector3 arrowDirection = lookDirection;
+        //Vector3 arrowDirection = lookTarget;
+
+        
 
         //add height to the position
-        Vector3 spawningPosition = new Vector3(attackPoint.position.x, (attackPoint.position.y + 0.2f), attackPoint.position.z);
+        //Vector3 spawningPosition = new Vector3(attackPoint.position.x, (attackPoint.position.y + 0.2f), attackPoint.position.z);
+
+        arrow.GetComponent<Arrow>().spawnProjectile(arrow, lookTarget, attackPoint);
 
         //Instantiate projectile
-        GameObject currentArrow = Instantiate(arrow, spawningPosition, Quaternion.identity);
+        //GameObject currentArrow = Instantiate(arrow, spawningPosition, Quaternion.identity);
 
         //this line caused issues with rotation
         //currentArrow.transform.forward = arrowDirection.normalized;
 
         //add forces to arrow
-        Debug.Log(arrowForce);
-        currentArrow.GetComponent<Rigidbody>().AddForce(arrowDirection.normalized * arrowForce, ForceMode.Impulse);
+        /*Debug.Log(arrowForce);
+        currentArrow.GetComponent<Rigidbody>().AddForce(arrowDirection.normalized * arrowForce, ForceMode.Impulse);*/
         //currentArrow.GetComponent<Rigidbody>().AddForce(cam.transform.up * upwardForce, ForceMode.Impulse);
 
         //apply arrow damage value to arrow

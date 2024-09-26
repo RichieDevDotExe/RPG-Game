@@ -20,7 +20,7 @@ public class Player : Entity
     [SerializeField] private int maxPotions;
     [SerializeField] private int gold;
     */
-    private Vector3 lookDirection;
+    private Vector3 lookTarget;
 
     [Header("Player Audio Libary")]
     public AudioClip swordSwingSFX;
@@ -83,10 +83,10 @@ public class Player : Entity
         get { return sockets; } 
         set { sockets = value; }
     }
-    public Vector3 LookDirection
+    public Vector3 LookTarget
     {
-        get { return lookDirection; }
-        set { lookDirection = value; }
+        get { return lookTarget; }
+        set { lookTarget = value; }
     }
     public float PlayerHeight
     {

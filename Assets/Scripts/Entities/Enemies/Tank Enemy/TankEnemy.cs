@@ -276,7 +276,7 @@ public class TankEnemy : Enemy
         //Debug.Log("Object " + throwable.name);
         
         //Throwable projectile uses projectile system 
-        throwable.GetComponent<ThrowableObject>().spawnProjectile(throwable,player.transform);
+        throwable.GetComponent<ThrowableObject>().spawnProjectile(throwable,player.transform.position, throwable.transform);
         //throwable = null;
         Destroy(throwable);
     }

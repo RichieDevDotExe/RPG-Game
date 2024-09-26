@@ -18,11 +18,11 @@ public class ThrowableObject : Projectile
         
     }
     //override spawnprojectile function to apply ridgedbody to throwables
-    public override void spawnProjectile(GameObject selectedProjectile, Transform target)
+    public override void spawnProjectile(GameObject selectedProjectile, Vector3 target, Transform spawnLoaction)
     {
         //Debug.Log("Player pos 2 " + target.transform.position);
         Debug.Log("Object 2 " + selectedProjectile.name);
-        GameObject newProjectile = Instantiate(selectedProjectile, transform.position, transform.rotation);
+        GameObject newProjectile = Instantiate(selectedProjectile, spawnLoaction.position, spawnLoaction.rotation);
         Debug.Log("Object 2 " + newProjectile.name);
         newProjectile.GetComponent<Projectile>().RB = newProjectile.AddComponent<Rigidbody>();
         newProjectile.GetComponent<Projectile>().launchProjectile(target);
