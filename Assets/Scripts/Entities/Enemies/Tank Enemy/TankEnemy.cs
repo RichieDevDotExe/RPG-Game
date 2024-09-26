@@ -39,7 +39,6 @@ public class TankEnemy : Enemy
 
     //attack to be passed into enemy attack function
     private Action currentAttack;
-    private Rigidbody rb;
     private float saveSpeed;
     
     //tank stats
@@ -77,8 +76,6 @@ public class TankEnemy : Enemy
         animator.SetFloat("velX", rb.velocity.x);
         animator.SetFloat("velZ", rb.velocity.z);
         agent.speed = EntitySpeed;
-
-        
     }
 
     public override void entityTakeDamage(float damage)
@@ -154,7 +151,7 @@ public class TankEnemy : Enemy
     //Once in close range to player enemy will throw a punch 
     public void startPunch()
     {
-        animator.SetBool("isPunching",true);
+        animator.SetTrigger("isPunching");
         agent.ResetPath();
         punchHitbox.enabled = true;
     }
@@ -166,8 +163,6 @@ public class TankEnemy : Enemy
 
     public void finishPunch()
     {
-        animator.SetTrigger("isIdle");
-        animator.SetBool("isPunching", false);
         stateMachine.changeState(new TankIdleState());
     }
 
