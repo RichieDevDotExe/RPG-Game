@@ -26,7 +26,7 @@ public class ProjectileManager : MonoBehaviour
         Projectile projectileProperties = selectedProjectile.GetComponent<Projectile>();
         if (projectileProperties != null)
         {
-            projectileProperties.spawnProjectile(selectedProjectile, target);
+            projectileProperties.spawnProjectile(selectedProjectile, target.position, selectedProjectile.transform);
         }
     }
 }

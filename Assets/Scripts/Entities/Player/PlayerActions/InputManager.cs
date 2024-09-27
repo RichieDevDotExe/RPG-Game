@@ -24,7 +24,8 @@ public class InputManager : MonoBehaviour
     {
         playerMotor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
 
-        onFoot.Attack.performed += ctx => playerAttack.playerAttack();
+        onFoot.Attack.started += ctx => playerAttack.startAttack();
+        onFoot.Attack.canceled += ctx => playerAttack.releaseAttack();
         onFoot.WeaponSlot1.performed += ctx => playerAttack.switchWeaponSlot(0);
         onFoot.WeaponSlot2.performed += ctx => playerAttack.switchWeaponSlot(1);
 

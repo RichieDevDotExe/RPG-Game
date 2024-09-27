@@ -30,20 +30,18 @@ public abstract class Projectile : MonoBehaviour
     }
 
 
-    public virtual void spawnProjectile(GameObject selectedProjectile,Transform target)
+    public virtual void spawnProjectile(GameObject selectedProjectile,Vector3 target, Transform spawnLoaction)
     {
-        //Debug.Log("Player pos 2 " + target.transform.position);
-        //Debug.Log("Object 2 " + selectedProjectile.name);
-        GameObject newProjectile = Instantiate(selectedProjectile);
-        //Debug.Log("Object 2 " + newProjectile.name);
+        GameObject newProjectile = Instantiate(selectedProjectile, spawnLoaction.position, spawnLoaction.rotation);
         newProjectile.GetComponent<Projectile>().launchProjectile(target);
     }
 
-    public virtual void launchProjectile(Transform target)
+    public virtual void launchProjectile(Vector3 target)
     {
-        //Debug.Log("HEY THIS IS TARGET "+target);
+        Debug.Log("HEY THIS IS TARGET "+target);
         //Debug.Log("HEY THIS IS POSITION " + transform.position);
-        Vector3 forceCal = (target.transform.position - transform.position) * speed;
+        Vector3 forceCal = (target - transform.position) * speed;
+        Debug.Log(forceCal);
         rb.AddForce(forceCal, ForceMode.Impulse);
     }
     public virtual void projectileHit()
@@ -52,13 +50,13 @@ public abstract class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<Player>();
-        if (player != null)
+        var entity = other.GetComponent<Entity>();
+        if (entity != null)
         {
-            Debug.Log("PlayerHIt");
-            player.entityTakeDamage(damage);
+            Debug.Log("EntityHit");
+            entity.entityTakeDamage(damage);
         }
         projectileHit();
     }

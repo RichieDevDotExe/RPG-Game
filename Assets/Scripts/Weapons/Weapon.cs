@@ -33,7 +33,8 @@ public abstract class Weapon : MonoBehaviour
     {
         sockets.Attach(transform, backSocket);
     }
-    public abstract void attack();
+    public abstract void startAttack();
+    public abstract void releaseAttack();
     public abstract void startAttackAnimation();
     public abstract void endAttackAnimation();
 }

@@ -10,6 +10,8 @@ public class Player : Entity
     // Start is called before the first frame update
     [Header("Player Stats")]
     [SerializeField] private float attackCooldown;
+    [SerializeField] private GameObject playerHeightTransform;
+    private float playerHeight;
     private float lastPlayerAttack;
 
     /*
@@ -18,6 +20,7 @@ public class Player : Entity
     [SerializeField] private int maxPotions;
     [SerializeField] private int gold;
     */
+    private Vector3 lookTarget;
 
     [Header("Player Audio Libary")]
     public AudioClip swordSwingSFX;
@@ -41,6 +44,8 @@ public class Player : Entity
         hitbox = GetComponent<Collider>();
         animator = GetComponent<Animator>();
         sockets = GetComponent<MeshSockets>();
+
+        playerHeight = playerHeightTransform.transform.position.y;
     }
     private void Start()
     {
@@ -78,10 +83,20 @@ public class Player : Entity
         get { return sockets; } 
         set { sockets = value; }
     }
+    public Vector3 LookTarget
+    {
+        get { return lookTarget; }
+        set { lookTarget = value; }
+    }
+    public float PlayerHeight
+    {
+        get { return playerHeight; }
+        set { playerHeight = value; }
+    }
 
     protected override void entityAttack()
     {
-        playerAttack.playerAttack();
+        playerAttack.startAttack();
     }
 
     //logic for entity taking damage

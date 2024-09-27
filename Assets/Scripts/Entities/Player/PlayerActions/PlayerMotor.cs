@@ -11,7 +11,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 lookPos;
     private Camera mainCamera;
     private float speed;
-    Vector3 lookDir;
+    Vector3 lookTarget;
     private float idleTimer;
     private Animator animator;
     private int layerMask = 1 << 10;
@@ -129,22 +129,31 @@ public class PlayerMotor : MonoBehaviour
         set { rb = value; }
     }
 
+    //makes the player face towards the position of the mouse
     public void playerFaceTowards()
     {
+        //get the position of the mouse
         Ray mouseRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(mouseRay, out hit,100, layerMask))
         {
-            //Debug.Log(hit.collider);
             lookPos = hit.point;
         }
-        lookDir = lookPos - transform.position;
-        lookDir.y = 0;
+        lookTarget = lookPos - transform.position;
 
-        transform.LookAt(transform.position + lookDir, Vector3.up);
+        //increase the y value by the player's height to adjust aim for bow
+        lookTarget.y += Player.instance.PlayerHeight;
+
+        Player.instance.LookTarget = lookTarget;
+
+        //set the y value to 0 so the player doesn't rotate like crazy
+        lookTarget.y = 0;
+
+        transform.LookAt(transform.position + lookTarget, Vector3.up);
     }
 
+    //shows position of mouse visually for debugging purposes
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
