@@ -38,9 +38,10 @@ public abstract class Projectile : MonoBehaviour
 
     public virtual void launchProjectile(Vector3 target)
     {
-        //Debug.Log("HEY THIS IS TARGET "+target);
+        Debug.Log("HEY THIS IS TARGET "+target);
         //Debug.Log("HEY THIS IS POSITION " + transform.position);
         Vector3 forceCal = (target - transform.position) * speed;
+        Debug.Log(forceCal);
         rb.AddForce(forceCal, ForceMode.Impulse);
     }
     public virtual void projectileHit()

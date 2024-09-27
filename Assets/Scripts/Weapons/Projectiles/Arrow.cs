@@ -17,16 +17,19 @@ public class Arrow : Projectile
      }*/
     public override void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        Debug.Log("collision detected");
+       /* if (other.gameObject.layer == 7)
         {
+            Debug.Log("hit player");
             return;
-        }
+        }*/
         var entity = other.GetComponent<Entity>();
         if (entity != null)
         {
             Debug.Log("EntityHit");
             entity.entityTakeDamage(damage);
+            projectileHit();
         }
-        projectileHit();
+        
     }
 }

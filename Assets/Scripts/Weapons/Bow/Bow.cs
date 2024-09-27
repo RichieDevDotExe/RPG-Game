@@ -60,47 +60,19 @@ public class Bow : Weapon
     }
     public override void releaseAttack()
     {
-        /*//find the exact hit position using a raycast
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
 
-        //check if ray hits something
-        Vector3 targetPoint;
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.GetPoint(75); //just a point far away from the player*/
-        //}
-
-        //calculate direction from attackPoint to targetPoint
-        //Vector3 arrowDirection = targetPoint - attackPoint.position;
-        //Vector3 arrowDirection = lookTarget;
-
-        
-
-        //add height to the position
-        //Vector3 spawningPosition = new Vector3(attackPoint.position.x, (attackPoint.position.y + 0.2f), attackPoint.position.z);
-
-        arrow.GetComponent<Arrow>().spawnProjectile(arrow, lookTarget, attackPoint);
-
-        //Instantiate projectile
-        //GameObject currentArrow = Instantiate(arrow, spawningPosition, Quaternion.identity);
+        arrow.GetComponent<Arrow>().spawnProjectile(arrow, Player.instance.LookTarget, attackPoint);
 
         //this line caused issues with rotation
         //currentArrow.transform.forward = arrowDirection.normalized;
 
-        //add forces to arrow
-        /*Debug.Log(arrowForce);
-        currentArrow.GetComponent<Rigidbody>().AddForce(arrowDirection.normalized * arrowForce, ForceMode.Impulse);*/
-        //currentArrow.GetComponent<Rigidbody>().AddForce(cam.transform.up * upwardForce, ForceMode.Impulse);
+        
+        //currentArrow.GetComponent<Rigidbody>().AddForce(arrowDirection.normalized * arrowForce, ForceMode.Impulse);
+
 
         //apply arrow damage value to arrow
         //currentArrow.GetComponent<ArrowCollision>().arrowDamage = arrowDamage;
 
-        //make it so there is a delay between shots
 
         charging = false;
 

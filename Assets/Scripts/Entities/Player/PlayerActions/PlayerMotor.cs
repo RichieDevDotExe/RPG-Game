@@ -129,6 +129,7 @@ public class PlayerMotor : MonoBehaviour
         set { rb = value; }
     }
 
+    //makes the player face towards the position of the mouse
     public void playerFaceTowards()
     {
         //get the position of the mouse
@@ -152,6 +153,7 @@ public class PlayerMotor : MonoBehaviour
         transform.LookAt(transform.position + lookTarget, Vector3.up);
     }
 
+    //shows position of mouse visually for debugging purposes
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

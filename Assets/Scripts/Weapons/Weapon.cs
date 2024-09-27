@@ -11,12 +11,10 @@ public abstract class Weapon : MonoBehaviour
     public MeshSockets.SocketID handSocket;
     public MeshSockets.SocketID backSocket;
     public MeshSockets sockets;
-    protected Vector3 lookTarget;
     protected void initWeapon()
     {
         animator = Player.instance.PlayerAnimator;
         sockets = Player.instance.Sockets;
-        lookTarget = Player.instance.LookTarget;
     }
 
     public float AttackCooldown
